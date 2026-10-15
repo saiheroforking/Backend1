@@ -5,15 +5,15 @@ from schemas import EmployeeCreate
 
 app = FastAPI(title="Employee Management API")
 
-# Allow requests from the local React development server.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://fronttend-self.vercel.app"],
+    allow_origins=[
+        "https://fronttend-self.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 employees = ["sai"]
 next_id = 1
 
